@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: url("../static/background.jpg") repeat scroll center top / cover;
+    height: 120vh;
+}
+
+.nav-container {
+    box-sizing: border-box;
+    padding-left: 100px;
+    padding-right: 40px;
+    width: 100%;
+    position: fixed;
+    font-size: 1em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-container li {
+    font-size: 14px;
+    color: aliceblue;
+    padding: 18px;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+.nav-container li:hover {
+    background-color: aliceblue;
+    color: #333;
+}
+
+.nav-container a {
+    text-decoration: none;
+}
+
+.nav-icon a {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 40px;
+    color: aliceblue;
+}
