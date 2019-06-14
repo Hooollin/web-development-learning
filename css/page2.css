@@ -1,0 +1,105 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.header-container {
+    background-color: darkcyan;
+    position: relative;
+    text-align: center;
+    height: 36vh;
+    min-height: 140px;
+    width: 100%;
+}
+
+.header-container div {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+p {
+    color: #fff;
+}
+
+#title {
+    font-size: 300%;
+    margin: 1rem;
+}
+
+nav {
+    background-color: #333;
+    list-style: none;
+}
+
+a {
+    padding: 20px;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+}
+
+
+a:hover {
+    background-color: rgb(172, 182, 189);
+    color: #333;
+}
+
+
+nav a:nth-child(4) {
+    float: right;
+}
+
+.row {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.aside {
+    flex: 30%;
+    background-color: aquamarine;
+    flex-flow: column nowrap;
+    padding: 20px;
+}
+
+
+.main {
+    background-color: aquamarine;
+    flex: 70%;
+    padding: 20px;
+}
+
+.main * {
+    margin: 20px 0;
+}
+
+.aside * {
+    margin: 20px 0;
+}
+
+.fakeimg {
+    background-color: #333;
+    width: 100%;
+    height: 200px;
+}
+
+.wider-fakeimg {
+    background-color: #333;
+    width: 100%;
+    height: 100px;
+}
+
+.footer {
+    height: 200px;
+    align-items: center;
+    display: flex;
+    font-size: 200%;
+    justify-content: center;
+}
+
+.description {
+    color: #333;
+    text-align: center;
+}
