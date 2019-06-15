@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue</title>
+</head>
+
+<body>
+    <div id="app">
+        <span v-bind:title="message">
+            {{message}}
+            <p v-if="seen">now you see me</p>
+        </span>
+    </div>
+
+    <div id="app-4">
+        <ol>
+            <li v-for="todo in todos">
+                {{todo}}
+            </li>
+        </ol>
+    </div>
+
+    <div id="app-5">
+        <p> {{message}} </p>
+        <button v-on:click="reverseMessage">reverse message</button>
+    </div>
+
+    <div id="app-6">
+        <p>{{message}}</p>
+        <input type="text" v-model="message">
+
+    </div>
+
+    <div id="app-7">
+        <ol>
+            <todo-item v-for="item in todoList" v-bind:todo="item" v-bind:key="item.id"></todo-item>
+        </ol>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    Vue.component('todo-item', {
+        props: ['todo'],
+        template: '<li>{{ todo.text }}</li>'
+    });
+
+    const app7 = new Vue({
+        el: "#app-7",
+        data: {
+            todoList: [{
+                    id: 0,
+                    text: "homework"
+                },
+                {
+                    id: 1,
+                    text: "programming"
+                },
+                {
+                    id: 2,
+                    text: "learning"
+                },
+            ],
+        }
+    });
+
+    const app6 = new Vue({
+        el: "#app-6",
+        data: {
+            message: "hello, world",
+        }
+    });
+    const app5 = new Vue({
+        el: "#app-5",
+        data: {
+            message: "hello"
+        },
+        methods: {
+            reverseMessage: function () {
+                this.message = this.message.split("").reverse().join("")
+            }
+        }
+    });
+    var app = new Vue({
+        el: '#app',
+        data: {
+            seen: true,
+            message: "页面加载于" + new Date().toLocaleString()
+        }
+    })
+
+    var app4 = new Vue({
+        el: "#app-4",
+        data: {
+            todos: ["homework", "programming", "learning"]
+        }
+    });
+</script>
+
+</html>
