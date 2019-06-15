@@ -1,0 +1,126 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1:last-child,
+h2:last-child,
+h3:last-child,
+h4:last-child,
+h5:last-child,
+h6:last-child,
+p:last-child {
+    margin-bottom: 0;
+}
+
+.sidebar {
+    background-color: #4b4b4b;
+    position: fixed;
+    width: 250px;
+    height: 100vh;
+    overflow: auto;
+}
+
+.avatar {
+    margin: 2em auto;
+    width: 160px;
+    height: 160px;
+}
+
+.avatar img {
+    vertical-align: middle;
+    height: 160px;
+    width: 160px;
+    border-radius: 100%;
+}
+
+.nav a {
+    text-align: center;
+    padding: 1em;
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    transition: background-color 0.5s;
+}
+
+.nav a:hover {
+    background-color: aliceblue;
+    color: #333;
+}
+
+.container {
+    margin-left: 250px;
+}
+
+.container section {
+    padding: 5rem 0;
+}
+
+.wrap {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 0.5rem;
+}
+
+.title {
+    margin-bottom: 1.6rem;
+}
+
+#info .title::before {
+    content: "\f005";
+}
+
+.title::before {
+    padding-right: 0.5rem;
+    font-family: "FontAwesome";
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-l-4 {
+    flex: 0 0 33.333%;
+}
+
+p {
+    line-height: 1.8em;
+    margin-bottom: 1rem;
+}
+
+.normal-link {
+    text-decoration: none;
+    color: rgb(46, 98, 139);
+}
+
+#skills {
+    background-color: #f8bd24;
+}
+
+#skills .title::before {
+    content: "\f19d";
+}
+
+.center-fixed {
+    text-align: center;
+}
+
+.skill-icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 100%;
+    box-shadow: 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.skill-icon i {
+    font-size: 50px;
+    line-height: 100px;
+}
+
+#skills h3 {
+    margin: 1.4rem 0;
+}
