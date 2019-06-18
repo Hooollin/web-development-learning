@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Components</title>
+</head>
+
+<body>
+    <div id="app">
+        <template v-for="post in posts">
+            <div :style="{fontSize:postFontSize + 'em'}">
+                <blog @enlarge-text='onEnlargeText' :key=" post.id" :post='post' v-model="text">
+                </blog>
+                <p>{{ text }}</p>
+            </div>
+        </template>
+    </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    Vue.component("blog", {
+        props: ['post', 'value'],
+        template: `
+        <div>
+            <h3>{{post.title}}</h3>
+            <button @click="$emit('enlarge-text', 0.1)"> Enlarge text </button>
+            <div v-html="post.content"></div>
+            <input :value='value' @input="$emit('input', $event.target.value)">
+        </div>`
+    });
+
+    const app = new Vue({
+        el: "#app",
+        data: {
+            text: "1",
+            posts: [{
+                    id: 1,
+                    title: "one",
+                    content: "111",
+                },
+                {
+                    id: 2,
+                    title: "two",
+                    content: "222",
+                },
+                {
+                    id: 3,
+                    title: "three",
+                    content: "333",
+                }
+            ],
+            postFontSize: 1,
+        },
+        methods: {
+            onEnlargeText: function (enlargeAmount) {
+                this.postFontSize += enlargeAmount;
+            }
+        }
+    });
+</script>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM</title>
+    <style>
+        body {}
+    </style>
+</head>
+
+<body>
+    <div id="shoppingList">
+        <label for="inputItem">Enter a new item:</label>
+        <input id="inputItem" type="text"> <button onclick="addItem()">add Item</button>
+        <ul id="list">
+
+        </ul>
+    </div>
+</body>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script>
+    const input = document.querySelector("#inputItem");
+    const ul = document.querySelector("#list");
+    let counter = 0;
+
+    function addItem() {
+        let text = input.value;
+
+        let button = document.createElement("button");
+        button.textContent = "delete";
+        button.addEventListener("click", function () {
+            document.querySelector("#list").removeChild(this.parentElement);
+        });
+        let li = document.createElement("li");
+        li.setAttribute("id", counter++);
+        li.textContent = text;
+        li.appendChild(button);
+        ul.appendChild(
+            li);
+    }
+</script>
+
+</html>

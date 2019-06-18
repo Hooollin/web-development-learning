@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue event handling</title>
+</head>
+
+<body>
+    <div id="example-1">
+        <button @click="counter += 1">Add 1</button>
+        <p>The button above has been clicked {{ counter }} times.</p>
+        <button @click="greet">Greet</button>
+        <input style="display: block" type="text" v-model.lazy="text">
+        <p>{{ text }}</p>
+        <select name="selectGender" id="1" v-model="choice">
+            <option value="one">one</option>
+            <option value="two">two</option>
+            <option value="three">three</option>
+            <option value="four">four</option>
+        </select>
+        <input type="checkbox" v-model="checked">
+        <button-counter></button-counter>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    Vue.component("button-counter", {
+        data: function () {
+            return {
+                count: 0
+            }
+        },
+        template: `<button @click="count++">you clicked me {{count}} times.</button> `
+    });
+    const ex1 = new Vue({
+        el: "#example-1",
+        data: {
+            counter: 0,
+            text: "input text here",
+            choice: "three",
+            checked: false,
+        },
+        methods: {
+            greet: function (e) {
+                alert("hi");
+                if (event) {
+                    alert(event.target.tagName);
+                }
+            },
+            submit: function () {
+                alert("submit");
+            }
+        },
+
+    });
+</script>
+
+</html>
